@@ -1,0 +1,7 @@
+###How to find python site-package
+
+**in LINUX**
+~/.local/lib/python3.6/site-packages
+
+**in MACOS**
+/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages
