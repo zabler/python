@@ -1,4 +1,4 @@
-Coding Cheat Sheet
+Python Cheat Sheet
 ==================
 
 Setting Python Path Variable
