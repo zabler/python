@@ -1,10 +1,12 @@
 Python Cheat Sheet
 ==================
 
-Setting Python Path Variable
-----------------------------
+## Path Variable
+
+###Setting
 
 **on MAC**
+
 - open terminal in home directory ~/
   
     `` sudo nano .zshrc ``
@@ -35,8 +37,7 @@ Setting Python Path Variable
   "/Pfad/zu/Codefolder/in/welchem/gitreposbzwModule/liegen"
 
 
-
-## Path Variablen Prüfen
+### Path Variablen Prüfen
 
 **with Python**
 
@@ -49,8 +50,8 @@ Setting Python Path Variable
 `echo $PATH`
 
 
-
-##How to find python site-package
+## SITE-PACKAGES
+### How to find python site-package
 
 **on MAC**
 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages
@@ -59,9 +60,82 @@ Setting Python Path Variable
 ~/.local/lib/python3.6/site-packages
 
 
+### Overview about installed Packages
+```
+pip3 list
+```
 
-## Overview about installed Packages
 
-## Which packages is my code using?
+### Which packages is my code using?
+`pipreqs 'Projectfolder'`
 
-## Reinstall all Packages
+
+### List all instaled Packages
+```
+pip3 freeze > requirements.txt
+```
+
+
+### Delete all packages
+```
+pip3 uninstall -r requirements.txt -y
+```
+
+
+### Install a bunch of packages
+
+```
+pip3 install -r requirements.txt
+```
+
+
+
+## VSCODE
+
+###GLOBAL/ USER SETTINGS
+
+/Users/nicolaszabler/Library/Application Support/Code/User/settings.json
+
+**Pylint for Lynting**
+
+- Install and Enable
+- Args: --disable=all --enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode
+
+**autopep8 for Formatting**
+
+- Install and Enable
+- Args: --aggressive
+
+
+
+###LOCAL/ WORKSPACE SETTINGS
+
+.vscode/settings.json
+
+
+
+###Debugging 
+
+.vscode/launch.json
+
+
+
+## PACKAGE DEVELOPMENT
+
+### Structure
+
+- built
+  - freeze.py
+- doc
+  - concept
+  - pictures
+- src
+  - `__init.py__`
+  - 'module'
+    - `__init.py__`
+    - `__main.py__`
+- test
+- .gitignore
+- README.md
+- License
+
