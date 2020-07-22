@@ -104,8 +104,11 @@ pip3 install -r requirements.txt
 **autopep8 for Formatting**
 
 - Install and Enable
-- Args: --aggressive
+- Args: --aggressive --max-line-length=350
 
+###VIA TERMINAL
+
+`autopep8 --in-place --aggressive --aggressive --max-line-length=350 <file_name>`
 
 
 ###LOCAL/ WORKSPACE SETTINGS
@@ -138,4 +141,5 @@ pip3 install -r requirements.txt
 - .gitignore
 - README.md
 - License
+
 
