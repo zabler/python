@@ -129,4 +129,15 @@ Python Cheat Sheet
   - README.md
   - License
 
+### How to add dependecies of modules?
+- edit .zshrc in a shell
+    ```
+    sudo nano .zshrc
+    ```
+- add PYTHONPATH and its export at eof
+    ```
+    PYTHONPATH = "PathToFolder1" : "PathToFolder2"
+    export PYTHONPATH
+    ```
+
 ### How to implement test for code?
