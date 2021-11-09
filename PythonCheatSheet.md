@@ -3,8 +3,34 @@ Python Cheat Sheet
 
 ### How to set up Python on Mac?
 - Use Homebrew to install pyenv
-- Use pyenv to install a python version incl. pip and make it global
-- For specific projects create an virutalenv with an specific python version and specifc packages
+- Use pyenv to install a (or different) python version incl. pip and make it global
+- For each project create an virutalenv with an specific python version and specifc packages
+
+### How to set up a Virtual Environment
+- Go into repository of code, open cmd and run
+    ``` 
+    python -m venv venv
+    ```
+- This creates the virtual env with the python version the command was executed, only availabe for the code in the local folder
+- For Proof run in the local folder in cmd:
+    ``` 
+    source venv/bin/activate
+    which python
+    ```
+- To check the installed packages of this virtual env
+    ``` 
+    pip list
+    ```
+- To make the dependencies of packages available for other people
+    ``` 
+    pip freeze > requirements.txt
+    ```
+- Stop using the virutal env in cmd
+    ``` 
+    deactivate
+    ```
+- Make sure that venv is listed in your .gitignore file
+- Virtual Enviroments are automatically detected by VS Code
 
 ### Where to find python and its versions?
 - List all python versions installed by pyenv
@@ -129,8 +155,9 @@ Python Cheat Sheet
   ```
 
 ### How to structure a python package?
+  - venv
   - built
-    - freeze.py
+    - 
   - doc
     - concept
     - pictures
@@ -142,7 +169,7 @@ Python Cheat Sheet
   - test
   - .gitignore
   - README.md
-  - License
+  - LICENSE
 
 ### How to add dependecies of modules?
 - edit .zshrc in a shell
