@@ -25,6 +25,10 @@ Python Cheat Sheet
     ``` 
     pip freeze > requirements.txt
     ```
+- To install packages of foreign Virtual Env
+    ``` 
+   pip install -r requirements.txt
+    ```
 - Stop using the virutal env in cmd
     ``` 
     deactivate
