@@ -76,10 +76,25 @@ Python Cheat Sheet
     ],
     ```
 
-### Where to configure debugging? 
-  ```
-  .vscode/launch.json
-  ```
+### How to configure debugging? 
+- open 
+    ```
+    .vscode/launch.json
+    ```
+- add configuration
+    ```
+    {
+      "name": "DebugConfig",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "args": [
+          "--argName",
+          "argValue"
+        ]
+    }
+    ```
 
 ### How to check dependecies with Python?
 - run python in a shell
