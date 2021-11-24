@@ -3,6 +3,7 @@ Python Cheat Sheet
 
 ### How to set up Python on Mac?
 - Use Homebrew to install pyenv
+- genauer beschreiben
 - Use pyenv to install a (or different) python version incl. pip and make it global
 - For each project create an virutalenv with an specific python version and specifc packages
 
