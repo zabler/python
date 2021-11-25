@@ -3,8 +3,31 @@ Python Cheat Sheet
 
 ### How to set up Python on Mac?
 - Use Homebrew to install pyenv
-- genauer beschreiben
-- Use pyenv to install a (or different) python version incl. pip and make it global
+    - run install skript
+        ``` 
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        ```
+    - add path to .zshrc, create file if not there
+        ```
+        touch .zshrc
+        echo 'export PATH=/opt/homebrew/bin:$PATH' >> ~/.zshrc
+        ```
+    - make it available
+        ```
+        source ~/.zshrc
+        ```
+- Use pyenv to install a (or different) python version incl. pip and make it global, and check it
+    ``` 
+    pyenv install X.Y.Z
+    pyenv global X.Y.Z
+    pyenv version
+    ```
+- Make it work and check python version
+    ``` 
+    echo 'eval "$(pyenv init --path)"' >> ~/.zshrc
+    which python
+    python -V
+    ```
 - For each project create an virutalenv with an specific python version and specifc packages
 
 ### How to set up a Virtual Environment
@@ -108,7 +131,7 @@ Python Cheat Sheet
     ```
 
 ### How to configure debugging? 
-- open 
+- open locally
     ```
     .vscode/launch.json
     ```
@@ -123,6 +146,21 @@ Python Cheat Sheet
       "args": [
           "--argName",
           "argValue"
+        ]
+    }
+    ```
+- or global to settings.json
+    ```
+        "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Python: Current File",
+                "type": "python",
+                "request": "launch",
+                "program": "${file}",
+                "console": "integratedTerminal"
+            }
         ]
     }
     ```
