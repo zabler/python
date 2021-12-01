@@ -100,14 +100,18 @@ Python Cheat Sheet
     ```
     "python.linting.pylintEnabled": true,
     ```
-- Use specific arguments for individual linting
+- Use specific arguments for individual linting, as well as adding local packages to avoid import erros
     ```
       "python.linting.pylintArgs": [
         "--max-line-length",
         "200",
         "--disable",
         "line-too-long"
+        "--init-hook",
+	    "import sys; sys.path.append('Path/To/Local/SrcFolder1')"
+      ]
     ```
+
 ### How to change formatting in VS Code on Mac?
 - Install **autopep8**
     ```
@@ -138,7 +142,7 @@ Python Cheat Sheet
 - add configuration
     ```
     {
-      "name": "DebugConfig",
+      "name": "Python: Current File",
       "type": "python",
       "request": "launch",
       "program": "${file}",
@@ -200,29 +204,66 @@ Python Cheat Sheet
 ### How to structure a python package?
   - venv
   - built
-    - 
   - doc
     - concept
     - pictures
   - src
     - `__init.py__`
     - 'module'
-      - `__init.py__`
-      - `__main.py__`
+        - `file.py`
+        - `__init.py__`
+        - `__main.py__`
+            - subfolder
+                - `__init.py__`
+                - `subfile.py`
   - test
   - .gitignore
   - README.md
   - LICENSE
 
-### How to add dependecies of modules?
+### How to add local developed modules/packages?
 - edit .zshrc in a shell
     ```
     sudo nano .zshrc
     ```
-- add PYTHONPATH and its export at eof
+- add PYTHONPATH to .zshrc so that python can find it
     ```
-    PYTHONPATH = "PathToFolder1" : "PathToFolder2"
-    export PYTHONPATH
+    export PYTHONPATH="Path/To/Local/SrcFolder1":"Path/To/Local/SrcFolder2":$PYTHONPATH
     ```
+- To avoid error warning in terms of lynting, add in VScode settings.json
+    ```
+      "python.linting.pylintArgs": [
+        "--init-hook",
+	    "import sys; sys.path.append('Path/To/Local/SrcFolder1')"
+      ]
+    ```
+- To avoid errors with PyLance add in VScode settings.json
+    ```
+    "python.analysis.extraPaths": ["Path/To/Local/SrcFolder1"]
+    ```
+
+### What to write into __init__.py?
+- To get access to the packages python files and its functions write into top-level __init__.py
+    ```
+    import file
+    ```
+- To get access to subpackages write into top-level __init__.py
+    ```
+    from . import subfolder
+    ```
+- To get access to to the subpackages' python files and its functions write into second-level __init__.py
+    ```
+    import subfile
+    ```
+
+### How to use modules and functions from local packages in my code?
+- Import of the whole package 
+    ```
+    import package as pkg
+    ````
+- Use of functions
+    ```
+    return = pkg.file.function(variable1, variable2)
+    return = pkg.subfolder.file.function(variable1, variable2)
 
 ### How to implement test for code?
