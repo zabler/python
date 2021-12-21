@@ -1,5 +1,5 @@
-Python Cheat Sheet
-==================
+Python Cheat Sheet Mac
+======================
 
 ### How to set up Python on Mac?
 - Use Homebrew to install pyenv
