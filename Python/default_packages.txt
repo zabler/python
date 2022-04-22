@@ -1,5 +1,7 @@
 astroid
 autopep8
+colorama
+dill
 isort
 lazy-object-proxy
 mccabe
@@ -8,5 +10,6 @@ platformdirs
 pycodestyle
 pylint
 toml
+tomli
 typing_extensions
 wrapt
