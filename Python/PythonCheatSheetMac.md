@@ -30,6 +30,34 @@ Python Cheat Sheet Mac
     ```
 - For each project create an virutalenv with an specific python version and specifc packages
 
+### How to setup an pyenv that has access to core libraries of python to enhance options of building tools like auto-py-to-exe on mac using Python 3.8
+- Uninstall current python version
+    ```
+    pyenv uninstall X.X.X
+    ```
+- Use Homebrew to install tcl-tk tools
+    ```
+    brew install tcl-tk 
+    ```
+- Add path variable
+    ```
+    echo 'export PATH="/opt/homebrew/opt/tcl-tk/bin:$PATH"' >> ~/.zshrc
+    ```
+- Reload path file
+    ```
+    source .zshrc
+    ```
+- Set important variables for correct installation of all core libaries
+    ```
+    export LDFLAGS="-L/opt/homebrew/opt/tcl-tk/lib"
+    export CPPFLAGS="-I/opt/homebrew/opt/tcl-tk/include"
+    export PKG_CONFIG_PATH="/opt/homebrew/opt/tcl-tk/lib/pkgconfig"
+    export PYTHON_CONFIGURE_OPTS="--with-tcltk-includes='-I/opt/homebrew/opt/tcl-tk/include' --with-tcltk-libs='-L/opt/homebrew/opt/tcl-tk/lib -ltcl8.6 -ltk8.6' --enable-framework"
+- Reinstall Python; only works for version 3.8.13
+    ```
+    pyenv install 3.8.13
+    ```
+
 ### How to set up a Virtual Environment
 - Go into repository of code, open cmd and run
     ``` 

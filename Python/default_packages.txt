@@ -1,0 +1,12 @@
+astroid
+autopep8
+isort
+lazy-object-proxy
+mccabe
+pep8
+platformdirs
+pycodestyle
+pylint
+toml
+typing_extensions
+wrapt
