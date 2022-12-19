@@ -30,6 +30,14 @@ Python Cheat Sheet Mac
     ```
 - For each project create an virutalenv with an specific python version and specifc packages
 
+### How to set up Python Path that VS Code recognizes pyenv for every Venv?
+- Make pyenv init available for interatice shells (for login shells use .zprofile)
+    ```
+    'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+    'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+    'eval "$(pyenv init -)"' >> ~/.zshrc
+    ```
+
 ### How to setup an pyenv that has access to core libraries of python to enhance options of building tools like auto-py-to-exe on mac using Python 3.8
 - Uninstall current python version
     ```
