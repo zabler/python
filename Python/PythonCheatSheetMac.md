@@ -238,24 +238,23 @@ Python Cheat Sheet Mac
   ```
 
 ### How to structure a python package?
-  - venv
-  - built
-  - doc
-    - concept
-    - pictures
-  - src
-    - `__init.py__`
-    - 'module'
-        - `file.py`
+  - github_packagename
+    - venv
+    - built
+    - doc
+        - concept
+        - pictures
+    - package
         - `__init.py__`
-        - `__main.py__`
-            - subfolder
-                - `__init.py__`
-                - `subfile.py`
-  - test
-  - .gitignore
-  - README.md
-  - LICENSE
+        - `module.py`
+        - subfolder
+            - `__init.py__`
+            - `subfile.py`
+    - test
+    - .gitignore
+    - README.md
+    - LICENSE
+    - setup.py
 
 ### How to add local developed modules/packages?
 - edit .zshrc in a shell
