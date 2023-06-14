@@ -320,12 +320,20 @@ This Q&A cheat sheet gives useful suggestions for developing Python code using V
         )
     ```
 - Define the build system in pyproject.toml
-pyproject toml
-- Start build process
-python -m build 
-    - IMPORT: Result should be on top level folder
+- Start build process after upgrading build package
+    ```bash
+    python -m pip install --upgrade build
+    python -m build 
+    ```
+- IMPORTANT
+    - Result should be on top level folder
     - EEG.info in the package folder
-- 
+
+### How to install a local built package in another environment?
+- Install the wheel file, stored in the dist folder of the built package
+    ```bash
+    pip install path/to/local/wheelfile.whl
+    ```
 
 ### How to make a (new version of my) python package available on pip using twine?
 - Before distributing the package on test pypa, name should be test!
