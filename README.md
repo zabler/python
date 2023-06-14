@@ -334,6 +334,10 @@ This Q&A cheat sheet gives useful suggestions for developing Python code using V
     ```bash
     pip install path/to/local/wheelfile.whl
     ```
+- If you want that changes in the local built immidiately affects your code
+    ```bash
+    pip install -e path/to/local/wheelfile.whl
+    ```
 
 ### How to make a (new version of my) python package available on pip using twine?
 - Before distributing the package on test pypa, name should be test!
