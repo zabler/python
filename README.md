@@ -83,6 +83,7 @@ This Q&A cheat sheet gives useful suggestions for developing Python code using V
     source venv/bin/activate
     which python
     ```
+- Important: It's necessary to have the code in a local folder, not in a synced cloud folder. Otherwise the correct python venv cannot be found or activated.
 - To check the installed packages of this virtual env
     ```bash
     pip list
@@ -268,7 +269,7 @@ This Q&A cheat sheet gives useful suggestions for developing Python code using V
     - One top-level __init__.py file in the pacakge folder listing all modules
     ```Python
     from . import module
-    from .subfolder import subfolder
+    from .subfolder import submodule
     ```
     - every subfolder needs to have an empty __init__.py file
 - Option 2:
