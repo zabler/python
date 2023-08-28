@@ -257,14 +257,75 @@ This Q&A cheat sheet gives useful suggestions for developing Python code using V
             - subfolder
                 - `__init.py__`
                 - `submodule.py`
-        - tests
+    - tests
+        - `example.py`
     - .gitignore
     - README.md
     - LICENSE
     - setup.py
     - pyproject.toml
 
+### How to structure a python project
+  - github_repo
+    - venv
+    - doc
+        - concept
+        - pictures+
+    - archive
+        - `old_script_a.py`
+    - src
+        - `mainscript_a.py`
+        - `mainscript_b.py`
+        - `mainscript_c.py`
+        - packageA
+            - `__init.py__`
+            - `module.py`
+            - subfolder
+                - `__init.py__`
+                - `submodule.py`
+        - packageB
+            - `__init.py__`
+            - `module.py`
+            - subfolder
+                - `__init.py__`
+                - `submodule.py`
+        - notpackageC
+            - `module.py`
+    - tests
+        - `test.py`
+    - .gitignore
+    - README.md
+    - LICENSE
+
+### How can files access each other in Python vs. VSCode?
+- VS Code: Add the workspace or the src folder to your PYTHONPATH using the launch.json file from VS Code
+    ```JSON
+    "env": {
+                    "PYTHONPATH": "${workspaceRoot}:src"
+                }
+    ```
+    - Using this method all moduls and subfolders are added to PYTHONPATH and can be seen by each other
+- Python Only (favorite): Place the main scripts as top-level file directly after the root `src`, so that when pyhton inits the script all folders below are automatically added to PYTHONPATH
+- Main Difference: If main-scripts are nested in folders, moduls in parallel folders cannot be assessed when using pyhton only, while in VS Code everything can be found by adding the workspace. In case the code is used without the VS Code IDE, it's still can be used, when the scripts are place top-level, the pythonic way.
+
+### How should I use local developed packages inside my repo?
+- Develope them as you wish, but try not to use methods from one package in others, which would cause problems regarding linking to each other when VS Code workspace is not in use 
+- On the longterm this subpackages can be outsourced to be there own packages
+
+### How should I use local developed packages from other repos?
+- Install local packages by using the -e parameter to benefit from the most recent changes in this packages without having them distributed in knew releases
+    ```BASH
+    python install -e  path/to/repo/incl/setuppyfile
+    ```
+
+### How to run test files on a python package?
+- Add a test.py or example.py file for the specific modul in /tests or directly in the specific folder
+- Be aware which folder's can be assesed by this file
+
 ### What to write into __init__.py in an pyhton package?
+- Option 0:
+    - Don't create a __init__.py file at all, a modul can also be assesed without
+    - But it's helpful to make 
 - Option 1:
     - One top-level __init__.py file in the pacakge folder listing all modules
     ```Python
@@ -272,21 +333,11 @@ This Q&A cheat sheet gives useful suggestions for developing Python code using V
     from .subfolder import submodule
     ```
     - every subfolder needs to have an empty __init__.py file
-- Option 2:
+- Option 2 (favorite):
     - Every folder and subfolder inside the package contains an __init__.py file listing all modules of the folder
     ```Python
     from . import module
     ```
-
-### How to run test files on a python package?
-- Add a test.py file for the specific modul in /tests
-- Add the package path to your PYTHONPATH for debbuging using the launch.json file from VSCODe
-    ```JSON
-    "env": {
-                    "PYTHONPATH": "${workspaceRoot}:src:medipy"
-                }
-    ```
-
 
 ### How to build a python package using setuptools.py?
 - Define setup.py
