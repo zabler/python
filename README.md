@@ -3,7 +3,7 @@ Python Cheat Sheet Mac
 
 This Q&A cheat sheet gives useful suggestions for developing Python code using VS Code on Mac.
 
-![](https://imgs.xkcd.com/comics/python_environment.png)
+![](/fig1.png)
 
 
 ### How to set up Python on Mac?
