@@ -140,6 +140,9 @@ This Q&A cheat sheet gives useful suggestions for developing Python code using V
 .vscode
 # MAC
 .DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
 ```
 
 ### How to add linting for python in VS Code on Mac?
