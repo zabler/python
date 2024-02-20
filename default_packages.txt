@@ -1,15 +1,2 @@
-astroid
-autopep8
-colorama
-dill
-isort
-lazy-object-proxy
-mccabe
-pep8
-platformdirs
-pycodestyle
 pylint
-toml
-tomli
-typing_extensions
-wrapt
+autopep8

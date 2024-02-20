@@ -70,7 +70,6 @@ This Q&A cheat sheet gives useful suggestions for developing Python code using V
 - Reinstall Python; only works for version 3.8.13
     ```bash
     pyenv install 3.8.13
-    ```
 
 ### How to set up a Virtual Environment
 - Go into repository of code, open cmd and run
@@ -112,6 +111,7 @@ This Q&A cheat sheet gives useful suggestions for developing Python code using V
     ```bash
     ~/.pyenv/versions/
     ```
+- System means all other versions not installed by pyenv; either system's version, homebrew directly installed or other way
 
 ### What about pyhton and python3 preinstalled on Mac?
 - python
@@ -134,79 +134,65 @@ This Q&A cheat sheet gives useful suggestions for developing Python code using V
     /.vscode/settings.json
     ```
 
+### What to add to .gitignore?
+```
+# VSCODE
+.vscode
+# MAC
+.DS_Store
+```
+
 ### How to add linting for python in VS Code on Mac?
 - Install **pylint** package
     ```bash
     pip install pylint
     ```
-- Enable it in workpspace settings.json
+- Customize it
     ```JSON
-    "python.linting.pylintEnabled": true,
-    ```
-- Use specific arguments for individual linting, as well as adding local packages to avoid import erros
-    ```JSON
-      "python.linting.pylintArgs": [
-        "--max-line-length",
-        "200",
-        "--disable",
-        "line-too-long"
-        "--init-hook",
-      ]
+    "pylint.cwd": "${workspaceFolder}/src",
+    "pylint.importStrategy": "fromEnvironment",
+    "pylint.args": [
+        "--max-line-length=200",
+    ],
     ```
 
 ### How to change formatting in VS Code on Mac?
 - Install **autopep8**
     ```bash
-    pip install pep8
-    pip install --upgrade autopep8
+    pip install autopep8
     ```
-- Enable it in workpspace settings.json (FORMAT ON TYPE NOT WORKING)
+- Enable it in workpspace settings.json 
     ```JSON
-    "python.formatting.provider": "autopep8",
-    "editor.formatOnType": true,
-    "editor.formatOnSave": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8",
+        "editor.formatOnSave": true,
+    },
     ```
-- Use specific arguments for individual formatting
+- Customize it
     ```JSON
-    "python.formatting.autopep8Args": [
-        "--max-line-length",
-        "200",
-        "--aggressive",
-        "--aggressive",
-    ],
+    "autopep8.importStrategy": "fromEnvironment",
+    "autopep8.args": [
+        "--max-line-length","200",
+        "--aggressive", "--aggressive"],
     ```
+
 
 ### How to configure debugging? 
 - open locally
     ```bash
     .vscode/launch.json
     ```
-- add configuration
+- add configuration in workpspace's .vscode/settings.json (or launch.json)
     ```JSON
     {
-      "name": "Python: Current File",
-      "type": "python",
+      "name": "Debug Python Code",
+      "type": "debugpy",
       "request": "launch",
       "program": "${file}",
       "console": "integratedTerminal",
       "args": [
           "--argName",
           "argValue"
-        ]
-    }
-    ```
-- or global to settings.json
-    ```JSON
-        "launch": {
-        "version": "0.2.0",
-        "configurations": [
-            {
-                "name": "Python: Current File",
-                "type": "python",
-                "request": "launch",
-                "program": "${file}",
-                "console": "integratedTerminal"
-            }
         ]
     }
     ```
