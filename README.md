@@ -138,6 +138,7 @@ This Q&A cheat sheet gives useful suggestions for developing Python code using V
 ```
 # VSCODE
 .vscode
+
 # MAC
 .DS_Store
 ._.DS_Store
