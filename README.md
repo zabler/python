@@ -200,6 +200,7 @@ This Q&A cheat sheet gives useful suggestions for developing Python code using V
         ]
     }
     ```
+- If you're using older python version 3.8 or 3.9, use ```"type": "pyhton"``` to avoid errors
 
 ### How to check dependecies with Python?
 - run python in a shell
