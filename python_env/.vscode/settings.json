@@ -1,7 +1,6 @@
 {
     "workbench.colorTheme": "Default High Contrast",
     "pylint.cwd": "${workspaceFolder}/src",
-    "pylint.importStrategy": "fromEnvironment",
     "pylint.args": [
         "--max-line-length=200",
     ],
@@ -9,22 +8,9 @@
         "editor.defaultFormatter": "ms-python.autopep8",
         "editor.formatOnSave": true,
     },
-    "autopep8.importStrategy": "fromEnvironment",
     "autopep8.args": [
         "--max-line-length","200",
         "--aggressive", "--aggressive"],
     "git.confirmSync": false,
     "git.suggestSmartCommit": false,
-    "launch": {
-        "version": "0.2.0",
-        "configurations": [
-            {
-                "name": "Debug Python script",
-                "type": "debugpy",
-                "request": "launch",
-                "program": "${file}",
-                "console": "integratedTerminal",
-            }
-        ]
-    },
 }
