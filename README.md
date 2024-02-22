@@ -147,23 +147,36 @@ This Q&A cheat sheet gives useful suggestions for developing Python code using V
 ```
 
 ### How to add linting for python in VS Code on Mac?
-- Install **pylint** package
+- Install **pylint** as extension or install it as package
     ```bash
     pip install pylint
+    ```
+- Define which of them to use: Default uses extension (useBundle)
+    ```JSON
+    "pylint.importStrategy": "useBundle",
+    ```
+    ```JSON
+    "pylint.importStrategy": "fromEnvironment"
     ```
 - Customize it
     ```JSON
     "pylint.cwd": "${workspaceFolder}/src",
-    "pylint.importStrategy": "fromEnvironment",
     "pylint.args": [
         "--max-line-length=200",
     ],
     ```
 
-### How to change formatting in VS Code on Mac?
-- Install **autopep8**
+### How to configure formatting in VS Code on Mac?
+- Install **autopep8** as extension or install it as package
     ```bash
     pip install autopep8
+    ```
+- Define which of them to use: Default uses extension (useBundle)
+    ```JSON
+    "autopep8.importStrategy": "useBundle",
+    ```
+    ```JSON
+    "autopep8.importStrategy": "fromEnvironment",
     ```
 - Enable it in workpspace settings.json 
     ```JSON
@@ -174,14 +187,12 @@ This Q&A cheat sheet gives useful suggestions for developing Python code using V
     ```
 - Customize it
     ```JSON
-    "autopep8.importStrategy": "fromEnvironment",
     "autopep8.args": [
         "--max-line-length","200",
         "--aggressive", "--aggressive"],
     ```
 
-
-### How to configure debugging? 
+### How to configure debugging in VS Code on Mac? 
 - open locally
     ```bash
     .vscode/launch.json
@@ -200,7 +211,7 @@ This Q&A cheat sheet gives useful suggestions for developing Python code using V
         ]
     }
     ```
-- If you're using older python version 3.8 or 3.9, use ```"type": "pyhton"``` to avoid errors
+- If you're using older python version 3.8 or 3.9, use ```"type": "python"``` to avoid errors
 
 ### How to check dependecies with Python?
 - run python in a shell
