@@ -1,5 +1,5 @@
-Python Cheat Sheet Mac and VSCode
-=================================
+Python Cheat Sheet Mac and VS Code
+==================================
 
 This Q&A cheat sheet gives useful suggestions for developing Python code using VS Code on Mac.
 
