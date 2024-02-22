@@ -178,7 +178,7 @@ This Q&A cheat sheet gives useful suggestions for developing Python code using V
     ```JSON
     "autopep8.importStrategy": "fromEnvironment",
     ```
-- Enable it in workpspace settings.json 
+- Enable it in workspace settings.json 
     ```JSON
     "[python]": {
         "editor.defaultFormatter": "ms-python.autopep8",
