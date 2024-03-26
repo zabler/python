@@ -1,13 +1,17 @@
 #!/bin/zsh
 # Creating Virtual Environment
-codeFolder="/Users/nicolaszabler/Code/"
+codeFolder=~/Code/
 cd $codeFolder
-echo "Which pythonVersion?"
+echo "Which pythonVersion should be used for this venv?"
 pyenv versions
 read pythonVersion
-echo "Which gitRepo (Get Code remotly by providing ssh url or just reinit the venv without updating the code providing the name)"
+# TODO: Add check if pythonVersion exist
+echo "Which gitRepo should be used?"
+echo "Reinit the venv without updating the code typing the name or get code remotly by providing ssh url"
 ls
 read gitRepo
+# TODO: Add check if gitRepo exist
+# Maybe two scripts; Update local venv vs update from remote; 
 if [[ $gitRepo == *"github.com"* ]]; then
 	git clone $gitRepo
 	repoName=$(echo "$gitRepo" | awk -F/ '{print $2}' | sed 's/\.git//')
