@@ -1,5 +1,4 @@
-#!/bin/zsh
-# Change for linux to #!/usr/bin/bash
+# No shebang to be used by bash (linux) and zsh(mac)
 
 # Creating Virtual Environment
 codeFolder=~/Code/
