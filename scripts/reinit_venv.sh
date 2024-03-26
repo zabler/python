@@ -1,11 +1,13 @@
 #!/bin/zsh
+# Change for linux to #!/usr/bin/bash
+
 # Creating Virtual Environment
 codeFolder=~/Code/
 cd $codeFolder
 echo "Which pythonVersion should be used for this venv?"
 pyenv versions
 read pythonVersion
-# TODO: Add check if pythonVersion exist
+# TODO: Add check if pythonVersion exist, add stop it 
 echo "Which gitRepo should be used?"
 echo "Reinit the venv without updating the code typing the name or get code remotly by providing ssh url"
 ls
