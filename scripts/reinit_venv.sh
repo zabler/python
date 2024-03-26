@@ -11,7 +11,7 @@ echo "Reinit the venv without updating the code typing the name or get code remo
 ls
 read gitRepo
 # TODO: Add check if gitRepo exist
-# Maybe two scripts; Update local venv vs update from remote; 
+# Maybe two scripts; Update local venv vs update from remote; becuase it will overwrite
 if [[ $gitRepo == *"github.com"* ]]; then
 	git clone $gitRepo
 	repoName=$(echo "$gitRepo" | awk -F/ '{print $2}' | sed 's/\.git//')
