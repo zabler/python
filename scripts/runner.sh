@@ -1,4 +1,5 @@
 # Run script from project folder after updating and activating venv
+# TODO: make this script more variable with options to be selected rather than be written
 echo "Run Script from Project"
 codeFolder=~/Code/
 cd $codeFolder
@@ -11,5 +12,6 @@ cd src
 echo "Which Script?"
 ls
 read script
+cd ..
 source venv/bin/activate
-python /src/$script
+python -u ./src/$script
