@@ -432,4 +432,9 @@ python -u background_script.py
     ```JSON
     "python.analysis.extraPaths": ["Path/To/Local/SrcFolder1"]
     ```
-
+### How to version code? 
+- use tags for different releases, x for major changes like python framework switches, y for features, z for patches
+    ```git
+    git tag -a vX.Y.Z -m "release message"
+    git push origin vX.Y.Z
+    ```
