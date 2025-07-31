@@ -1,0 +1,43 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../data"
+		},
+		{
+			"path": "../meta"
+		},
+		{
+			"path": "../output"
+		}
+	],
+	"settings": {
+		"workbench.colorTheme": "Default High Contrast",
+		"git.confirmSync": false,
+		"git.suggestSmartCommit": false,
+		"[python]": {
+			"editor.defaultFormatter": "ms-python.autopep8",
+			"editor.formatOnSave": true,
+		},
+		"python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",
+		"python.terminal.activateEnvironment": true,
+		"autopep8.args": [
+			"--max-line-length","200",
+			"--aggressive", "--aggressive"],
+		
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+        {
+            "name": "Python Debugger DebugPy",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }
+		]
+	},
+}
