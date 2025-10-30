@@ -442,7 +442,7 @@ python -u background_script.py
 
 ### How to structure a research project in python with a package and scritps
 
-The package can made availabe as editable package to subproject_1 by pip install -e package, or just use the local_package
+The package can made availabe as an editable pacakge  by `pip install -e .`, or just use the local_package (as done before)
 
 - github_repo
 	- venv
