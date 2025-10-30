@@ -439,35 +439,35 @@ python -u background_script.py
     git push origin vX.Y.Z
     ```
 
-### How to structure a research project in python with mutlitple subprojects and packages
 
-The pacakge_a can made availabe as editable package to subproject_1 by pip install -e package_a and the correct pyproject.toml
+### How to structure a research project in python with a package and scritps
+
+The package can made availabe as editable package to subproject_1 by pip install -e package, or just use the local_package
 
 - github_repo
 	- venv
 	- doc
 		- concept
 		- pictures
-	- package_a
- 		- pyproject.toml
-		- src
-  			- package_a 
-	    		- `__init.py__`
-				- `modul_a.py`
-				- `modul_b.py`
-				- `modul_c.py`
-	     - tests
-				- `test.py`
-     - subproject_1
+	- src
+		- package 
+			- `__init.py__`
+			- `modul_a.py`
+			- `modul_b.py`
+			- `modul_c.py`
+     - scripts
      	- `script_a.py`
       	- `script_b.py`
        	- local_package
        		- `__init.py__`
 			- `modul_l1.py`
 			- `modul_l2.py`
-		- tests
-			- `test.py`
+	- tests
+		- `test.py`
 	- .gitignore
+ 	- pyproject.toml (for managing src)
 	- README.md
 	- LICENSE
+
+
 
