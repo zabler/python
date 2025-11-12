@@ -469,6 +469,9 @@ The package can made availabe as an editable pacakge  by `pip install -e .`, or 
   	- config.toml (for managing script paths) 
 	- README.md
 	- LICENSE
+ - data (no changeable datasets)
+ - meta (addtional variable meta information)
+ - output (script outputs)
 
 
 
