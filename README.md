@@ -449,7 +449,7 @@ The package can made availabe as an editable pacakge  by `pip install -e .`, or 
 	- doc
 		- concept
 		- pictures
-	- src
+	- packages
 		- package 
 			- `__init.py__`
 			- `modul_a.py`
@@ -462,10 +462,11 @@ The package can made availabe as an editable pacakge  by `pip install -e .`, or 
        		- `__init.py__`
 			- `modul_l1.py`
 			- `modul_l2.py`
-	- tests
-		- `test.py`
+	- notebooks
+		- `notebooks.ipynb`
 	- .gitignore
- 	- pyproject.toml (for managing src)
+ 	- pyproject.toml (for managing packages)
+  	- config.toml (for managing script paths) 
 	- README.md
 	- LICENSE
 
