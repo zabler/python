@@ -473,5 +473,9 @@ The package can made availabe as an editable pacakge  by `pip install -e .`, or 
  - meta (addtional variable meta information)
  - output (script outputs)
 
+### How to make file importable a module an runable a script?
+
+Put the script running part after in `if __name__ == "__main__":`
+
 
 
