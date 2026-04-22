@@ -446,9 +446,6 @@ The package can made availabe as an editable pacakge  by `pip install -e .`, or 
 
 - github_repo
 	- venv
-	- doc
-		- concept
-		- pictures
 	- packages
 		- package 
 			- `__init.py__`
@@ -466,8 +463,8 @@ The package can made availabe as an editable pacakge  by `pip install -e .`, or 
 		- `notebooks.ipynb`
 	- .gitignore
  	- pyproject.toml (for managing packages)
-  	- config.toml (for managing script paths) 
-	- README.md
+  	- config.yaml (for managing script paths) 
+	- README.md (living concept)
 	- LICENSE
  - data (no changeable datasets)
  - meta (addtional variable meta information)
